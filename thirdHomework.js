@@ -2,12 +2,11 @@
 Array.prototype.myFilter = function(callback, context) {
 
     let filteredArr = []; 
-    let element;
 
     for (let index = 0; index < this.length; index++) {
-        element = this[index];
+        let element = this[index];
 
-        if (callback.call(context, element, index, arr)) {
+        if (callback.call(context, element, index, this)) {
             filteredArr.push(element);
         }
     }
